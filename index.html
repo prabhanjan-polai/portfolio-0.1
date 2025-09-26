@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prabhanjan's Portfolio | Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="https://yt3.googleusercontent.com/r9WOwSxSmylKcZ0PFap9IZTsZj7QF7-Nxngq_AHfugIzrI1hNYDIcdoacTxtI-pn-JJ-M-elFw=s160-c-k-c0x00ffffff-no-rj" alt="Pp" type="image/x-icon" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1206f1;
+            --primary-dark: #4338ca;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+        
+          
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a;
+            color: var(--light);
+            scroll-behavior: smooth;
+        }
+        
+        .bebas {
+            font-family: 'Bebas Neue', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            height: calc(100% - 24px);
+            width: 2px;
+            background: var(--primary);
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.2);
+            color: var(--primary);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hero-image {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .typewriter-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 30px;
+            background-color: var(--primary);
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            transition: width 1s ease-out;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        
+        .tech-item {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #c7d2fe;
+        }
+        
+        .expertise-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(145deg, #1e293b, #1e293b);
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            bottom: -8px;
+            left: 0;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            border-radius: 2px;
+        }
+    </style>
+  </head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <header class="fixed w-full z-50">
+        <nav class="glass-card mx-auto px-6 py-3 rounded-full max-w-7xl mt-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold bebas tracking-wider">
+                    <span class="gradient-text">PRA</span><span class="text-white">BHA</span><span class="gradient-text">NJAN</span><br>
+                    
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-white hover:text-indigo-300 font-medium">Home</a>
+                    <a href="#about" class="nav-link text-white hover:text-indigo-300 font-medium">About</a>
+                    <a href="#skills" class="nav-link text-white hover:text-indigo-300 font-medium">Skills</a>
+                    <a href="#expertise" class="nav-link text-white hover:text-indigo-300 font-medium">Expertise</a>
+                    <a href="#projects" class="nav-link text-white hover:text-indigo-300 font-medium">Projects</a>
+                    <a href="#experience" class="nav-link text-white hover:text-indigo-300 font-medium">Experience</a>
+                    <a href="#contact" class="nav-link text-white hover:text-indigo-300 font-medium">Contact</a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="nav-link text-white hover:text-indigo-300 font-medium">Home</a>
+                    <a href="#about" class="nav-link text-white hover:text-indigo-300 font-medium">About</a>
+                    <a href="#skills" class="nav-link text-white hover:text-indigo-300 font-medium">Skills</a>
+                    <a href="#expertise" class="nav-link text-white hover:text-indigo-300 font-medium">Expertise</a>
+                    <a href="#projects" class="nav-link text-white hover:text-indigo-300 font-medium">Projects</a>
+                    <a href="#experience" class="nav-link text-white hover:text-indigo-300 font-medium">Experience</a>
+                    <a href="#contact" class="nav-link text-white hover:text-indigo-300 font-medium">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20 pb-16 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="text-center md:text-left">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 bebas tracking-wide">
+                Hi, I'm <span class="gradient-text">Prabhanjan</span>
+            </h1>
+            <div class="text-xl md:text-2xl mb-6">
+                <span id="typewriter" class="font-medium"></span>
+                <span class="typewriter-cursor"></span>
+            </div>
+            <p class="text-gray-300 mb-8 max-w-lg">
+                A passionate MERN Full Stack Developer with expertise in modern web technologies. 
+                I build exceptional digital experiences that are fast, accessible, and visually appealing.
+            </p>
+
+            <!-- Added Contact Information -->
+            <div class="flex flex-col md:flex-row gap-4 mb-8">
+                <div class="flex items-center justify-center md:justify-start gap-2">
+                    <i class="fas fa-envelope text-indigo-400"></i>
+                    <a href="mailto:prabhanjanpolai85@gmail.com" class="text-gray-300 hover:text-indigo-400 transition">
+                        prabhanjanpolai85@gmail.com
+                    </a>
+                </div>
+                <div class="flex items-center justify-center md:justify-start gap-2">
+                    <i class="fas fa-phone text-indigo-400"></i>
+                    <a href="tel:+918144174007" class="text-gray-300 hover:text-indigo-400 transition">
+                        +91 8144174007
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8 flex justify-center md:justify-start space-x-6">
+                <a href="https://github.com/prabhanjan-polai" target="_blank" class="social-icon text-gray-300 hover:text-indigo-400 text-xl">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/prabhanjan-polai-06b86a295/" target="_blank" class="social-icon text-gray-300 hover:text-indigo-400 text-xl">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="relative w-64 h-64 md:w-80 md:h-80">
+            <div class="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full opacity-20 blur-xl"></div>
+            <img src="https://media.licdn.com/dms/image/v2/D4E03AQHR2q-2jIyr7w/profile-displayphoto-shrink_200_200/B4EZjLvPlqGUAY-/0/1755764817404?e=2147483647&v=beta&t=2Zi7qkxJgURSyoj2OW7gGgDrLT4Ftuc_J1JoyWfovrA" 
+                 alt="prabhanjan-polai"
+                 class="hero-image relative w-full h-full rounded-full object-cover border-4 border-indigo-500/30">
+        </div>
+    </div>
+</section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-gradient-to-b from-slate-900 to-slate-800">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center section-title">
+                About <span class="gradient-text">Me</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-gray-300 mb-6">
+                        I'm a Full Stack Developer with a strong passion for creating elegant, efficient, and scalable web applications. 
+                        With expertise in both frontend and backend technologies, I bridge the gap between user experience and technical implementation.
+                    </p>
+                    <p class="text-gray-300 mb-6">
+                        My journey in software development began with a fascination for problem-solving and has evolved into a career where I can 
+                        combine creativity with technical skills to build solutions that make a difference.
+                    </p>
+                    <p class="text-gray-300 mb-6">
+                        When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying outdoor activities.
+                    </p>
+                    <p class="text-gray-300 mb-6">
+                         _“Code with clarity. Build with purpose. Deliver with impact.”_
+
+                    </p>
+                    <br>
+                    <br>
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="flex items-center">
+                            <div class="mr-3 text-indigo-400">
+                                <i class="fas fa-user-tie text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-white">Full Name</h4>
+                                <p class="text-gray-400">Prabhanjan Polai</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="mr-3 text-indigo-400">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-white">Email</h4>
+                                <p class="text-gray-400"> prabhanjanpolai85@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="mr-3 text-indigo-400">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-white">Phone</h4>
+                                <p class="text-gray-400">+91 8144174007</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="mr-3 text-indigo-400">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-white">Location</h4>
+                                <p class="text-gray-400">Berhampur, Odisha, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="glass-card p-6 rounded-xl">
+                        <div class="text-4xl font-bold text-indigo-400 mb-2">3+</div>
+                        <div class="text-gray-300">Years Experience</div>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl">
+                        <div class="text-4xl font-bold text-indigo-400 mb-2">13+</div>
+                        <div class="text-gray-300">Projects Completed</div>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl">
+                        <div class="text-4xl font-bold text-indigo-400 mb-2">10+</div>
+                        <div class="text-gray-300">Happy Clients</div>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl">
+                        <div class="text-4xl font-bold text-indigo-400 mb-2">5+</div>
+                        <div class="text-gray-300">Awards Won</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6 bg-slate-900">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center section-title">
+                My <span class="gradient-text">Skills</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Programming Languages</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">Java</span>
+                                <span class="text-gray-300">60%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">Python</span>
+                                <span class="text-gray-300">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">JavaScript</span>
+                                <span class="text-gray-300">95%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Web Development</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">HTML/CSS</span>
+                                <span class="text-gray-300">95%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">React</span>
+                                <span class="text-gray-300">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">Node.js</span>
+                                <span class="text-gray-300">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Data & Cloud</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">MS Excel</span>
+                                <span class="text-gray-300">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">Power BI</span>
+                                <span class="text-gray-300">75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">Cloud Computing</span>
+                                <span class="text-gray-300">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Database & Tools</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">MongoDB</span>
+                                <span class="text-gray-300">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                          <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">redis</span>
+                                <span class="text-gray-300">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">MySQL</span>
+                                <span class="text-gray-300">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">Git</span>
+                                <span class="text-gray-300">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="py-20 px-6 bg-gradient-to-b from-slate-800 to-slate-900">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center section-title">
+                My <span class="gradient-text">Expertise</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Java Expertise -->
+                <div class="expertise-card p-8 rounded-xl">
+                    <div class="text-indigo-400 mb-4">
+                        <i class="fab fa-java text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Java Development</h3>
+                    <p class="text-gray-300 mb-4">
+                        Extensive experience in Java programming with expertise in object-oriented design, 
+                        multithreading, and performance optimization. Skilled in Spring Boot framework 
+                        for building enterprise applications.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-item">Spring Boot</span>
+                        <span class="tech-item">Hibernate</span>
+                        <span class="tech-item">J2EE</span>
+                        <span class="tech-item">Maven</span>
+                    </div>
+                </div>
+                
+                <!-- Python Expertise -->
+                <div class="expertise-card p-8 rounded-xl">
+                    <div class="text-indigo-400 mb-4">
+                        <i class="fab fa-python text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Python Development</h3>
+                    <p class="text-gray-300 mb-4">
+                        Proficient in Python for web development, data analysis, and automation. 
+                        Experience with Django and Flask frameworks, as well as data science 
+                        libraries like NumPy, Pandas, and Matplotlib.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-item">Django</span>
+                        <span class="tech-item">Flask</span>
+                        <span class="tech-item">Pandas</span>
+                        <span class="tech-item">NumPy</span>
+                    </div>
+                </div>
+                
+                <!-- Web Development Expertise -->
+                <div class="expertise-card p-8 rounded-xl">
+                    <div class="text-indigo-400 mb-4">
+                        <i class="fas fa-code text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Web Development</h3>
+                    <p class="text-gray-300 mb-4">
+                        Full stack web development expertise with modern JavaScript frameworks. 
+                        Specialized in building responsive, accessible, and performant web applications 
+                        with React, Node.js, and modern CSS techniques.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-item">React</span>
+                        <span class="tech-item">Node.js</span>
+                        <span class="tech-item">Tailwind CSS</span>
+                        <span class="tech-item">REST APIs</span>
+                    </div>
+                </div>
+                
+                <!-- Cloud Computing Expertise -->
+                <div class="expertise-card p-8 rounded-xl">
+                    <div class="text-indigo-400 mb-4">
+                        <i class="fas fa-cloud text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Cloud Computing</h3>
+                    <p class="text-gray-300 mb-4">
+                        Experience with cloud platforms including AWS, Azure, and Google Cloud. 
+                        Skilled in deploying scalable applications, managing cloud infrastructure, 
+                        and implementing CI/CD pipelines.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-item">AWS</span>
+                        <span class="tech-item">Azure</span>
+                        <span class="tech-item">Docker</span>
+                        <span class="tech-item">Kubernetes</span>
+                    </div>
+                </div>
+                
+                <!-- Data Analysis Expertise -->
+                <div class="expertise-card p-8 rounded-xl">
+                    <div class="text-indigo-400 mb-4">
+                        <i class="fas fa-chart-line text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Data Analysis</h3>
+                    <p class="text-gray-300 mb-4">
+                        Strong data analysis skills with expertise in Excel, Power BI, and Python 
+                        data science stack. Capable of transforming raw data into meaningful insights 
+                        and visualizations for decision making.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-item">Power BI</span>
+                        <span class="tech-item">Excel</span>
+                        <span class="tech-item">Pandas</span>
+                        <span class="tech-item">Data Visualization</span>
+                    </div>
+                </div>
+                
+                <!-- Database Expertise -->
+                <div class="expertise-card p-8 rounded-xl">
+                    <div class="text-indigo-400 mb-4">
+                        <i class="fas fa-database text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Database Management</h3>
+                    <p class="text-gray-300 mb-4">
+                        Expertise in both SQL and NoSQL database systems. Experience with database design, 
+                        optimization, and implementation of complex queries and transactions.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-item">MySQL</span>
+                        <span class="tech-item">MongoDB</span>
+                        <span class="tech-item">Redis</span>
+                        <span class="tech-item">PostgreSQL</span>
+                        <span class="tech-item">Firebase</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 bg-slate-900">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center section-title">
+                Featured <span class="gradient-text">Projects</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Java Project -->
+                <div class="project-card p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-indigo-500/10 p-3 rounded-lg mr-4">
+                            <i class="fab fa-java text-2xl text-indigo-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white">E-Commerce Backend</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        A robust e-commerce backend system built with Java Spring Boot, featuring 
+                        product management, user authentication, and payment processing.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-item">Java</span>
+                        <span class="tech-item">Spring Boot</span>
+                        <span class="tech-item">MySQL</span>
+                    </div>
+                    <!--<div class="mt-6">
+                        <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>-->
+                </div>
+                
+                <!-- Python Project -->
+                <div class="project-card p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-indigo-500/10 p-3 rounded-lg mr-4">
+                            <i class="fab fa-python text-2xl text-indigo-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white">Data Analysis Dashboard</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Interactive data visualization dashboard built with Python and Dash, 
+                        providing insights from large datasets with filtering capabilities.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-item">Python</span>
+                        <span class="tech-item">Pandas</span>
+                        <span class="tech-item">Plotly</span>
+                    </div>
+                    
+                </div>
+                
+                <!-- Web Project -->
+                <div class="project-card p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-indigo-500/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-code text-2xl text-indigo-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white">Portfolio Website</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        A responsive portfolio website built with modern web technologies 
+                        showcasing projects, skills, and professional experience.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-item">HTML/CSS</span>
+                        <span class="tech-item">JavaScript</span>
+                        <span class="tech-item">Tailwind CSS</span>
+                    </div>
+                    <!--<div class="mt-6">
+                        <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>-->
+                </div>
+                
+                <!-- Cloud Project -->
+                <div class="project-card p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-indigo-500/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-cloud text-2xl text-indigo-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white">Cloud Deployment</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Automated deployment of web applications on AWS using CI/CD pipelines, 
+                        containerization with Docker, and orchestration with Kubernetes.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-item">AWS</span>
+                        <span class="tech-item">Docker</span>
+                        <span class="tech-item">Kubernetes</span>
+                         <span class="tech-item">n-8-n</span>
+                    </div>
+                     
+                </div>
+                
+                <!-- Excel/Power BI Project -->
+                <div class="project-card p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-indigo-500/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-file-excel text-2xl text-indigo-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white">Sales Analytics Dashboard</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Comprehensive sales analytics dashboard built with Power BI, integrating 
+                        multiple data sources and providing interactive visualizations.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-item">Power BI</span>
+                        <span class="tech-item">Excel</span>
+                        <span class="tech-item">DAX</span>
+                    </div>
+                    <!--<div class="mt-6">
+                        <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>-->
+                </div>
+                
+                <!-- Full Stack Project -->
+                <div class="project-card p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-indigo-500/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-laptop-code text-2xl text-indigo-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white">Task Management App</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        A full stack task management application with user authentication, 
+                        real-time updates, and collaborative features.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-item">React</span>
+                        <span class="tech-item">Node.js</span>
+                        <span class="tech-item">MongoDB</span>
+                    </div>
+                    
+                </div>
+            </div>
+            
+         
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-6 bg-gradient-to-b from-slate-800 to-slate-900">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center section-title">
+                Work <span class="gradient-text">Experience</span>
+            </h2>
+            
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="space-y-8">
+                    <!-- Experience 1 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-indigo-500 border-4 border-indigo-500/30"></div>
+                        <div class="glass-card p-6 rounded-xl">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                                <h3 class="text-xl font-semibold text-white">Full Stack Developer</h3>
+                                <span class="text-indigo-300 font-medium">2024 - Present</span>
+                            </div>
+                            <h4 class="text-gray-400 font-medium mb-4">MSC Hiretech</h4>
+                            <p class="text-gray-300">
+                                Developed and maintained web applications using Java, Python, and JavaScript technologies.
+                                Led a team of developers to implement cloud-based solutions for enterprise clients.
+                                Designed and optimized codes for high-performance applications.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience 2 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-indigo-500 border-4 border-indigo-500/30"></div>
+                        <div class="glass-card p-6 rounded-xl">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                                <h3 class="text-xl font-semibold text-white">Java Developer</h3>
+                                <span class="text-indigo-300 font-medium">2024 - 2024</span>
+                            </div>
+                            <h4 class="text-gray-400 font-medium mb-4">MSC Hiretech</h4>
+                            <p class="text-gray-300">
+                                Built enterprise applications using Java Spring framework.
+                                Implemented RESTful APIs and microservices architecture.
+                                Conducted code reviews and mentored junior developers.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience 3 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-indigo-500 border-4 border-indigo-500/30"></div>
+                        <div class="glass-card p-6 rounded-xl">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                                <h3 class="text-xl font-semibold text-white">Web Developer Intern</h3>
+                                <span class="text-indigo-300 font-medium">2024 - 2025</span>
+                            </div>
+                            <h4 class="text-gray-400 font-medium mb-4">MSC Hiretech</h4>
+                            <p class="text-gray-300">
+                                Developed responsive websites using HTML, CSS, and JavaScript.
+                                Assisted in building CMS solutions and e-commerce platforms.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-slate-900">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center section-title">
+                Get In <span class="gradient-text">Touch</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-white">Contact Information</h3>
+                    <p class="text-gray-300 mb-8">
+                        Feel free to reach out to me for any questions or opportunities. 
+                        I'm always open to discussing new projects, creative ideas, or 
+                        opportunities to be part of your vision.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-indigo-500/10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-envelope text-indigo-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-white">Email</h4>
+                                <a href="prabhanjanpolai85@gmail.com" class="text-gray-400 hover:text-indigo-300">prabhanjanpolai85@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-indigo-500/10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-phone-alt text-indigo-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-white">Phone</h4>
+                                <a href="tel:+919999999999" class="text-gray-400 hover:text-indigo-300">+91 8144174007</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-indigo-500/10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-map-marker-alt text-indigo-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-white">Location</h4>
+                                <p class="text-gray-400">Berhampur, Odisha, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex justify-center md:justify-start space-x-6">
+                    <a href="https://github.com/prabhanjan-polai" target="_blank" class="social-icon text-gray-300 hover:text-indigo-400 text-xl">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://https://www.linkedin.com/in/prabhanjan-polai" target="_blank" class="social-icon text-gray-300 hover:text-indigo-400 text-xl">
+                        <i class="fab fa-linkedin-in"></i>
+                     
+                </div>
+                </div>
+                
+                <div class="glass-card p-8 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-6 text-white">Send Me a Message</h3>
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-300 mb-2">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-300 mb-2">Your Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-300 mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-300 mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white"></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg font-medium hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 bg-slate-950">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-xl font-bold bebas tracking-wider mb-4 md:mb-0">
+                    <span class="gradient-text">PRA</span><span class="text-white">BHA</span><span class="gradient-text">NJAN</span>
+                </div>
+                <p class="text-gray-400 text-center md:text-right">
+                    © 2025 Prabhanjan Polai. All rights reserved.
+                </p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Typewriter effect
+        const typewriterText = "Full Stack Developer";
+        const typewriterElement = document.getElementById('typewriter');
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < typewriterText.length) {
+                typewriterElement.innerHTML += typewriterText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        
+        // Start the typewriter effect
+        window.addEventListener('load', typeWriter);
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Animate progress bars when scrolled into view
+        const progressBars = document.querySelectorAll('.progress-fill');
+        
+        function animateProgressBars() {
+            progressBars.forEach(bar => {
+                const percentage = bar.parentElement.previousElementSibling.lastElementChild.textContent;
+                bar.style.width = percentage;
+            });
+        }
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateProgressBars();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        document.querySelectorAll('#skills').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
